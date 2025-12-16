@@ -226,7 +226,7 @@ function getData(){
         let html="";
         data.forEach(item=>{
             html+=`
-            <div class="directory-item" onclick="openPlayer('https://tv4go.pages.dev/?id=${item.id}')">
+            <div class="directory-item" onclick="openPlayer('player.html?id=${item.id}')">
                 <img src="${item.logo}">
                 <b>${item.name}</b>
             </div>`;
