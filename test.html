@@ -954,7 +954,11 @@ if (movie.id && !movie.video) {
 /******************************
  * 🔴 DASH / MPD + ClearKey (DESKTOP ONLY)
  ******************************/
-if (typeof movie.video === 'object' && movie.video.mpd) {
+if (
+  typeof movie.video === 'object' &&
+  movie.video.mpd &&
+  movie.video.key
+) {
 
   // Block ONLY this DASH+DRM channel on mobile
   if (isMobileDevice()) {
