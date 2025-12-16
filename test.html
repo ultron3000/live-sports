@@ -962,7 +962,6 @@ if (
 
   // Block ONLY this DASH+DRM channel on mobile
   if (isMobileDevice()) {
-    alert('This channel works on desktop only.');
     closeModalHandler();
     return; // ⛔ return ONLY from DASH block
   }
@@ -978,13 +977,15 @@ if (
     if (movie.video.key) {
       const parts = movie.video.key.split(':');
       if (parts.length === 2) {
-        window.shakaPlayer.configure({
-          drm: {
-            clearKeys: {
-              [parts[0]]: parts[1]
-            }
-          }
-        });
+        if (!/android|iphone|ipad|ipod/i.test(navigator.userAgent)) {
+  window.shakaPlayer.configure({
+    drm: {
+      clearKeys: {
+        [kid]: key
+      }
+    }
+  });
+}
       }
     }
 
