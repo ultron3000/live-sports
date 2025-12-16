@@ -220,7 +220,7 @@ body{
 <!-- ===== CHANNEL DATA ===== -->
 <script>
 function getData(){
-    fetch("https://raw.githubusercontent.com/Shubhamkur/Tv/refs/heads/main/tvid")
+    fetch("./tvid.json")
     .then(res=>res.json())
     .then(data=>{
         let html="";
