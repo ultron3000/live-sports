@@ -146,7 +146,7 @@ document.addEventListener('DOMContentLoaded',()=>{
     const streamId=params.get("id");
     if(!streamId) return;
 
-    fetch("https://raw.githubusercontent.com/Shubhamkur/Tv/refs/heads/main/tv")
+    fetch('./tv.json')
     .then(res=>res.json())
     .then(data=>{
         const stream=data.find(i=>i.id===streamId);
